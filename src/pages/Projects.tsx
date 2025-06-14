@@ -40,19 +40,26 @@ const Projects = () => {
               Technical Projects
             </h1>
             <p className="text-xl text-center mb-12 max-w-3xl mx-auto" style={{ color: "#7d626a" }}>
-              Innovation through technology – here are some of the projects I've worked on.
+              Innovation through technology – here are some of the projects I have worked on.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {projects.map((project) => (
                 <Link 
                   key={project.id}
                   to={`/projects/${project.slug}`}
-                  className="block bg-white rounded-lg shadow-sm hover-lift border border-[#581f27] overflow-hidden group"
+                  className="project-card group overflow-hidden"
+                  style={{
+                    boxShadow: "0 2px 16px 0 rgba(88,31,39,0.06), 0 1.5px 4px rgba(120,87,70,0.07)",
+                    borderRadius: "1.1rem",
+                    background: "#fff9f5",
+                    border: "1.2px solid rgba(230,218,206,0.83)",
+                    transition: "box-shadow .23s, transform .2s"
+                  }}
                 >
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300 rounded-t-[1.1rem]"
                   />
                   <div className="p-6">
                     <h3 className="text-xl font-display font-semibold mb-3 group-hover:underline" style={{ color: "#581f27" }}>
@@ -65,7 +72,11 @@ const Projects = () => {
                       {project.technologies.map((tech) => (
                         <span 
                           key={tech}
-                          className="px-3 py-1 bg-[#f4e2cf] text-[#581f27] text-sm rounded-full border border-[#ad7283]"
+                          className="px-3 py-1 bg-[#f4e2cf] text-[#581f27] text-sm rounded-full border"
+                          style={{ 
+                            borderColor: "#e8d5c2", 
+                            background: "#faf2e7" 
+                          }}
                         >
                           {tech}
                         </span>

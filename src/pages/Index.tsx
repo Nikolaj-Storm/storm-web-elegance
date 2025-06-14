@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import Navigation from "../components/Navigation";
 
@@ -14,12 +13,20 @@ const Index = () => {
               How can research and technology<br />shape the society of the future?
             </h1>
             <p className="text-xl md:text-2xl mb-16 animate-slide-up font-light max-w-3xl mx-auto" style={{ color: "#7d626a" }}>
-              I'm Nikolaj Storm Petersen, researcher and technologist passionate about creating innovative solutions through interdisciplinary collaboration.
+              I am Nikolaj Storm Petersen, a researcher and technologist passionate about creating innovative solutions through interdisciplinary collaboration.
             </p>
             <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto animate-slide-up">
               <Link 
                 to="/papers" 
-                className="group bg-white p-8 rounded-lg shadow-lg hover-lift border transition-all duration-200 border-[#581f27]"
+                className="group card-action"
+                style={{
+                  background: "#fff9f5",
+                  color: "#581f27",
+                  boxShadow: "0 2px 16px 0 rgba(88,31,39,0.06)",
+                  border: "1.2px solid rgba(230,218,206,0.83)",
+                  padding: "2rem",
+                  borderRadius: "1.1rem"
+                }}
               >
                 <div className="mb-4" style={{ color: "#581f27" }}>
                   <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -31,7 +38,15 @@ const Index = () => {
               </Link>
               <Link 
                 to="/projects" 
-                className="group bg-white p-8 rounded-lg shadow-lg hover-lift border transition-all duration-200 border-[#581f27]"
+                className="group card-action"
+                style={{
+                  background: "#fff9f5",
+                  color: "#581f27",
+                  boxShadow: "0 2px 16px 0 rgba(88,31,39,0.06)",
+                  border: "1.2px solid rgba(230,218,206,0.83)",
+                  padding: "2rem",
+                  borderRadius: "1.1rem"
+                }}
               >
                 <div className="mb-4" style={{ color: "#581f27" }}>
                   <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -43,7 +58,15 @@ const Index = () => {
               </Link>
               <Link 
                 to="/blog" 
-                className="group bg-white p-8 rounded-lg shadow-lg hover-lift border transition-all duration-200 border-[#581f27]"
+                className="group card-action"
+                style={{
+                  background: "#fff9f5",
+                  color: "#581f27",
+                  boxShadow: "0 2px 16px 0 rgba(88,31,39,0.06)",
+                  border: "1.2px solid rgba(230,218,206,0.83)",
+                  padding: "2rem",
+                  borderRadius: "1.1rem"
+                }}
               >
                 <div className="mb-4" style={{ color: "#581f27" }}>
                   <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -70,4 +93,3 @@ const Index = () => {
 };
 
 export default Index;
-

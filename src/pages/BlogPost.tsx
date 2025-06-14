@@ -27,7 +27,16 @@ const BlogPost = () => {
       <main className="pt-24 pb-12">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto">
-            <article className="bg-white p-8 md:p-12 rounded-lg shadow-sm border border-[#581f27]">
+            <article 
+              className="blog-card"
+              style={{
+                boxShadow: "0 2px 16px 0 rgba(88,31,39,0.06), 0 1.5px 4px rgba(120,87,70,0.07)",
+                borderRadius: "1.1rem",
+                background: "#fff9f5",
+                border: "1.2px solid rgba(230,218,206,0.83)",
+                padding: "2.4rem",
+              }}
+            >
               <header className="mb-8 text-center">
                 <h1 className="text-3xl md:text-4xl font-display font-bold mb-4 leading-tight" style={{ color: "#581f27" }}>
                   {post.title}

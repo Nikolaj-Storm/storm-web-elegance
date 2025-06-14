@@ -10,34 +10,47 @@ const Navigation = () => {
     { path: "/about", label: "About" }
   ];
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50" style={{ background: "rgba(244,226,207,0.95)", borderBottom: "1px solid #581f27", backdropFilter: "blur(4px)" }}>
+    <nav
+      className="fixed top-0 left-0 right-0 z-50"
+      style={{
+        background: "rgba(244,226,207,0.93)",
+        borderBottom: "1px solid rgba(230,218,206,0.7)",
+        backdropFilter: "blur(4px)",
+        boxShadow: "0 2.5px 11px 0 rgba(88,31,39,0.07)"
+      }}
+    >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link 
             to="/" 
             className="text-2xl font-display font-bold transition-colors"
-            style={{ color: "#581f27" }}
+            style={{ color: "#581f27", borderRadius: "1.1rem", padding: "0.13em 0.68em", background: "rgba(255,255,255,0.20)" }}
           >
             Nikolaj Storm Petersen
           </Link>
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-lg font-medium transition-colors hover:text-[#581f27] ${
-                  location.pathname === item.path
-                    ? "border-b-2"
-                    : ""
-                }`}
-                style={{ color: location.pathname === item.path ? "#581f27" : "#7d626a", borderColor: location.pathname === item.path ? "#581f27" : "transparent" }}
+                className={`text-lg font-medium transition-colors hover:text-[#581f27] px-3 py-2 rounded-[0.8rem]`}
+                style={{
+                  color: location.pathname === item.path ? "#581f27" : "#7d626a",
+                  background: location.pathname === item.path ? "rgba(230,218,206,0.69)" : "transparent",
+                  fontWeight: 500
+                }}
               >
                 {item.label}
               </Link>
             ))}
           </div>
-          {/* Mobile menu button placeholder, could be replaced by real menu */}
-          <button className="md:hidden" style={{ color: "#581f27" }}>
+          {/* Mobile menu button placeholder */}
+          <button className="md:hidden" style={{
+            color: "#581f27",
+            background: "rgba(255,255,255,0.13)",
+            borderRadius: "0.7rem",
+            padding: "0.3em"
+          }}>
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>

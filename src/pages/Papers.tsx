@@ -47,7 +47,7 @@ const Papers = () => {
               Research Publications
             </h1>
             <p className="text-xl text-center mb-12 max-w-3xl mx-auto" style={{ color: "#7d626a" }}>
-              My academic contributions in technology, AI, and sustainability research
+              My academic contributions in technology, AI, and sustainability research.
             </p>
             <div className="space-y-8">
               {papers.map((paper) => (
@@ -56,10 +56,15 @@ const Papers = () => {
                   role="button"
                   tabIndex={0}
                   onClick={() => navigate(`/papers/${paper.id}`)}
-                  className="cursor-pointer bg-white p-8 rounded-lg border transition-all duration-200 shadow-sm hover:shadow-lg group focus:outline-none"
+                  className="paper-card group focus:outline-none"
                   style={{
-                    borderColor: "#581f27",
-                    boxShadow: "0 2px 8px rgba(88,31,39,0.06)",
+                    boxShadow: "0 2px 16px 0 rgba(88,31,39,0.06), 0 1.5px 4px rgba(120,87,70,0.07)",
+                    borderRadius: "1.1rem",
+                    background: "#fff9f5",
+                    border: "1.2px solid rgba(230,218,206,0.83)",
+                    cursor: "pointer",
+                    padding: "2rem",
+                    transition: "box-shadow .23s, transform .2s"
                   }}
                 >
                   <div className="mb-2 flex flex-wrap items-center gap-3">

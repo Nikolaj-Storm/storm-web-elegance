@@ -44,7 +44,15 @@ const Blog = () => {
                 <Link 
                   key={post.id}
                   to={`/blog/${post.slug}`}
-                  className="block bg-white p-8 rounded-lg shadow-sm hover-lift border border-[#581f27] group"
+                  className="blog-card group"
+                  style={{
+                    boxShadow: "0 2px 16px 0 rgba(88,31,39,0.06), 0 1.5px 4px rgba(120,87,70,0.07)",
+                    borderRadius: "1.1rem",
+                    background: "#fff9f5",
+                    border: "1.2px solid rgba(230,218,206,0.83)",
+                    padding: "2rem",
+                    display: "block",
+                  }}
                 >
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                     <h2 className="text-2xl font-display font-semibold" style={{ color: "#581f27" }}>
@@ -54,9 +62,7 @@ const Blog = () => {
                       {post.date}
                     </span>
                   </div>
-                  <p className="text-[#7d626a] leading-relaxed">
-                    {post.excerpt}
-                  </p>
+                  <p className="text-[#7d626a] leading-relaxed">{post.excerpt}</p>
                   <div className="mt-4" style={{ color: "#581f27" }}>
                     Read more →
                   </div>

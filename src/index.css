@@ -9,10 +9,6 @@
   :root {
     --background: 244 226 207; /* #f4e2cf */
     --foreground: 88 31 39; /* #581f27 */
-    --card: 250 243 237;
-    --card-foreground: 88 31 39;
-    --popover: 250 243 237;
-    --popover-foreground: 88 31 39;
     --primary: 88 31 39; /* #581f27 */
     --primary-foreground: 244 226 207;
     --secondary: 230 218 206;
@@ -21,18 +17,18 @@
     --muted-foreground: 120 87 70;
     --accent: 200 162 143;
     --accent-foreground: 88 31 39;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 220 190 170;
-    --input: 220 190 170;
-    --ring: 88 31 39;
-    --radius: 0.5rem;
+    --border: 230 218 206; /* meget lysegrå/beige */
+    --radius: 1.1rem; /* mere runde hjørner */
   }
 }
 
 @layer base {
   * {
-    @apply border-border;
+    border-radius: var(--radius); /* gør alt blødere */
+    border-color: rgba(230,218,206,0.7);
+    outline: none; /* fjerner outlines */
+    box-shadow: none; /* fjerner default shadow */
+    transition: box-shadow 0.23s cubic-bezier(.44,.13,.48,.87), background 0.25s, border-color 0.17s;
   }
 
   body {
@@ -80,14 +76,78 @@
 }
 
 .text-shadow {
-  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.07);
 }
 
 .hover-lift {
-  transition: all 0.3s ease;
+  transition: all 0.25s cubic-bezier(.33,.96,.54,.99);
 }
 
 .hover-lift:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(88, 31, 39, 0.15);
+  transform: translateY(-4px) scale(1.023);
+  box-shadow: 0 7px 30px 0 rgba(88,31,39,0.13), 0 1.5px 4px rgba(88,31,39,0.07);
 }
+
+.soft-card {
+  box-shadow: 0 2px 16px 0 rgba(88,31,39,0.06), 0 1.5px 4px rgba(120,87,70,0.07);
+  border: 1.2px solid rgba(230,218,206,0.85);
+  background: #fff9f5;
+  border-radius: var(--radius);
+  padding: 2rem;
+}
+
+/* Knapper */
+button, .btn, .shadcn-btn, .card-action, .sidebar-btn {
+  background: #581f27;
+  color: #f4e2cf;
+  border-radius: var(--radius);
+  border: none;
+  padding: 0.7em 1.6em;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  transition: box-shadow 0.21s cubic-bezier(.37,.06,.72,.98), background 0.18s;
+  box-shadow: 0 2px 12px 0 rgba(88,31,39,0.04);
+}
+
+button:hover, .btn:hover, .shadcn-btn:hover {
+  background: #7d626a;
+  color: #fff6f0;
+  box-shadow: 0 6px 28px 0 rgba(88,31,39,0.075), 0 1.5px 4px rgba(120,87,70,0.09);
+}
+
+input, textarea, select {
+  border-radius: calc(var(--radius) - 2px);
+  border-color: rgba(230,218,206,0.8);
+  background: #faf2e7;
+  box-shadow: 0 0.5px 1.5px rgba(120,87,70,0.02);
+  transition: border-color 0.2s;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: #ad7283;
+  box-shadow: 0 2px 12px 0 rgba(147,105,99,0.08);
+  outline: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e8d5c2;
+  border-radius: var(--radius);
+}
+::-webkit-scrollbar {
+  background: #f4e2cf;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Fjerner “ring” fra shadcn/ui komponenter */
+:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Specifikke til modale, kort, hover */
+.card, .card-action, .project-card, .blog-card, .paper-card {
+  @apply soft-card;
+  cursor: pointer;
+}
+
