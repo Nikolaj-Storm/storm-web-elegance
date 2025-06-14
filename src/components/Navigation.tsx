@@ -11,7 +11,7 @@ const Navigation = () => {
   ];
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50"
+      className="fixed top-0 left-0 right-0 z-[1000]"
       style={{
         background: "#f4e2cf",
         borderBottom: "1px solid rgba(230,218,206,0.7)",
@@ -43,6 +43,7 @@ const Navigation = () => {
                   background: location.pathname === item.path ? "rgba(230,218,206,0.56)" : "transparent",
                   fontWeight: 500
                 }}
+                tabIndex={0}
               >
                 {item.label}
               </Link>
@@ -53,7 +54,8 @@ const Navigation = () => {
             color: "#581f27",
             background: "rgba(255,255,255,0.07)",
             borderRadius: "0.7rem",
-            padding: "0.3em"
+            padding: "0.3em",
+            zIndex: 1100
           }}>
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
