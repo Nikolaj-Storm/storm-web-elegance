@@ -1,25 +1,11 @@
 
 import Navigation from "../components/Navigation";
+import BackgroundVideo from "../components/BackgroundVideo";
 
 const Index = () => {
   return (
-    <div className="relative min-h-screen flex flex-col overflow-hidden" style={{ background: "#f4e2cf" }}>
-      {/* Video Background */}
-      <div className="absolute inset-0 w-full h-full z-0">
-        <video
-          className="object-cover w-full h-full"
-          autoPlay
-          loop
-          muted
-          playsInline
-        >
-          <source src="/video/background.mp4" type="video/mp4" />
-          <source src="/video/background.webm" type="video/webm" />
-          Din browser understøtter ikke video-tag'et.
-        </video>
-        {/* Beige overlay */}
-        <div className="absolute inset-0 w-full h-full bg-[#f4e2cf]/80 pointer-events-none" />
-      </div>
+    <div className="relative min-h-screen flex flex-col overflow-hidden">
+      <BackgroundVideo />
       <div className="relative z-10">
         <Navigation />
       </div>
@@ -45,4 +31,3 @@ const Index = () => {
 };
 
 export default Index;
-
