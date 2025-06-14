@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import Navigation from "../components/Navigation";
 
@@ -19,17 +18,8 @@ const Index = () => {
           </div>
         </div>
       </main>
-      {/* Footer */}
-      <footer className="py-12 border-t" style={{ borderColor: "#581f27", background: "#f9f2ea" }}>
-        <div className="container mx-auto px-6 text-center">
-          <p className="text-[#7d626a]">
-            © 2024 Nikolaj Storm Petersen. All rights reserved.
-          </p>
-        </div>
-      </footer>
     </div>
   );
 };
 
 export default Index;
-
