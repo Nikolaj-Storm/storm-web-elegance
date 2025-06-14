@@ -44,10 +44,10 @@ const Papers = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-display font-bold mb-8 text-center" style={{ color: "#581f27" }}>
-              Forskningspublikationer
+              Research Publications
             </h1>
-            <p className="text-xl text-center mb-12 max-w-3xl mx-auto text-[#7d626a]">
-              Mine akademiske bidrag til forskning inden for teknologi, AI og bæredygtighed
+            <p className="text-xl text-center mb-12 max-w-3xl mx-auto" style={{ color: "#7d626a" }}>
+              My academic contributions in technology, AI, and sustainability research
             </p>
             <div className="space-y-8">
               {papers.map((paper) => (
@@ -64,13 +64,13 @@ const Papers = () => {
                 >
                   <div className="mb-2 flex flex-wrap items-center gap-3">
                     <span className="text-lg font-semibold" style={{color: "#581f27"}}>{paper.year}</span>
-                    <span className="text-[#ad7283] font-medium">•</span>
-                    <span className="italic text-[#ad7283]">{paper.venue}</span>
+                    <span style={{ color: "#ad7283" }} className="font-medium">•</span>
+                    <span className="italic" style={{ color: "#ad7283" }}>{paper.venue}</span>
                   </div>
                   <h2 className="text-2xl font-display font-semibold mb-2 leading-tight group-hover:underline" style={{ color: "#581f27" }}>
                     {paper.title}
                   </h2>
-                  <p className="text-[#7d626a] mb-2">{paper.description}</p>
+                  <p style={{ color: "#7d626a" }} className="mb-2">{paper.description}</p>
                 </div>
               ))}
             </div>

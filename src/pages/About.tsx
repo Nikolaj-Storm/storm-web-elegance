@@ -3,72 +3,69 @@ import Navigation from "../components/Navigation";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen" style={{ background: "#f4e2cf" }}>
       <Navigation />
-      
       <main className="pt-24 pb-12">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-display font-bold text-primary mb-8">
-                Om Nikolaj Storm Petersen
+              <h1 className="text-4xl md:text-5xl font-display font-bold mb-8" style={{ color: "#581f27" }}>
+                About Nikolaj Storm Petersen
               </h1>
-              <div className="w-32 h-32 bg-accent rounded-full mx-auto mb-8 flex items-center justify-center">
+              <div className="w-32 h-32 bg-[#ad7283] rounded-full mx-auto mb-8 flex items-center justify-center">
                 <span className="text-4xl">👨‍💻</span>
               </div>
             </div>
-
             <div className="prose prose-lg max-w-none">
-              <div className="bg-card p-8 rounded-lg shadow-sm border border-border mb-8">
-                <h2 className="text-2xl font-display font-semibold text-primary mb-4">Baggrund</h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  Jeg er forsker og teknolog med en passion for at udforske, hvordan avancerede teknologier kan løse komplekse samfundsproblemer. Mit arbejde spænder over områder som kunstig intelligens, bæredygtig udvikling og etiske teknologiske rammer.
+              <div className="bg-white p-8 rounded-lg shadow-sm border border-[#581f27] mb-8">
+                <h2 className="text-2xl font-display font-semibold mb-4" style={{ color: "#581f27" }}>Background</h2>
+                <p className="leading-relaxed mb-4" style={{ color: "#7d626a" }}>
+                  I am a researcher and technologist passionate about exploring how advanced technologies can solve complex societal challenges. My work ranges across artificial intelligence, sustainable development, and ethical technology frameworks.
                 </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  Med en tværfaglig tilgang kombinerer jeg teknisk ekspertise med samfundsvidenskabelige perspektiver for at skabe innovative løsninger, der gavner både mennesker og miljø.
+                <p className="leading-relaxed" style={{ color: "#7d626a" }}>
+                  With an interdisciplinary approach, I combine technical expertise with social science perspectives to create innovative solutions for both people and the environment.
                 </p>
               </div>
-
-              <div className="bg-card p-8 rounded-lg shadow-sm border border-border mb-8">
-                <h2 className="text-2xl font-display font-semibold text-primary mb-4">Forskningsområder</h2>
+              <div className="bg-white p-8 rounded-lg shadow-sm border border-[#581f27] mb-8">
+                <h2 className="text-2xl font-display font-semibold mb-4" style={{ color: "#581f27" }}>Research Areas</h2>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <h3 className="text-lg font-semibold text-primary mb-2">Kunstig Intelligens</h3>
-                    <p className="text-muted-foreground text-sm">
-                      Machine learning, etisk AI, og menneske-maskine interaktion
+                    <h3 className="text-lg font-semibold mb-2" style={{ color: "#581f27" }}>Artificial Intelligence</h3>
+                    <p className="text-sm" style={{ color: "#7d626a" }}>
+                      Machine learning, ethical AI, and human-machine interaction.
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-primary mb-2">Bæredygtig Teknologi</h3>
-                    <p className="text-muted-foreground text-sm">
-                      Grønne teknologier, Smart Cities, og miljøoptimering
+                    <h3 className="text-lg font-semibold mb-2" style={{ color: "#581f27" }}>Sustainable Technology</h3>
+                    <p className="text-sm" style={{ color: "#7d626a" }}>
+                      Green technologies, Smart Cities, and environmental optimization.
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-primary mb-2">Data Science</h3>
-                    <p className="text-muted-foreground text-sm">
-                      Big data analyse, blockchain, og sikker datadeling
+                    <h3 className="text-lg font-semibold mb-2" style={{ color: "#581f27" }}>Data Science</h3>
+                    <p className="text-sm" style={{ color: "#7d626a" }}>
+                      Big data analysis, blockchain, and secure data sharing.
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-primary mb-2">Teknologietik</h3>
-                    <p className="text-muted-foreground text-sm">
-                      Etiske rammer, privacy, og sociale konsekvenser af teknologi
+                    <h3 className="text-lg font-semibold mb-2" style={{ color: "#581f27" }}>Technology Ethics</h3>
+                    <p className="text-sm" style={{ color: "#7d626a" }}>
+                      Ethical frameworks, privacy, and the social consequences of technology.
                     </p>
                   </div>
                 </div>
               </div>
-
-              <div className="bg-card p-8 rounded-lg shadow-sm border border-border">
-                <h2 className="text-2xl font-display font-semibold text-primary mb-4">Kontakt</h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  Jeg er altid interesseret i at diskutere nye ideer og potentielle samarbejder. 
-                  Kontakt mig gerne, hvis du vil vide mere om mit arbejde eller har forslag til spændende projekter.
+              <div className="bg-white p-8 rounded-lg shadow-sm border border-[#581f27]">
+                <h2 className="text-2xl font-display font-semibold mb-4" style={{ color: "#581f27" }}>Contact</h2>
+                <p className="leading-relaxed mb-4" style={{ color: "#7d626a" }}>
+                  I am always interested in discussing new ideas and potential collaborations.
+                  Feel free to reach out if you want to know more about my work or have suggestions for exciting projects.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <a 
                     href="mailto:nikolaj@example.com"
-                    className="px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors font-medium"
+                    className="px-4 py-2"
+                    style={{ background: "#581f27", color: "#fff", borderRadius: "0.375rem", fontWeight: 500 }}
                   >
                     📧 Send Email
                   </a>
@@ -76,7 +73,8 @@ const About = () => {
                     href="https://linkedin.com/in/nikolajstorm"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 bg-accent text-accent-foreground rounded-md hover:bg-accent/90 transition-colors font-medium"
+                    className="px-4 py-2"
+                    style={{ background: "#ad7283", color: "#fff", borderRadius: "0.375rem", fontWeight: 500 }}
                   >
                     💼 LinkedIn
                   </a>

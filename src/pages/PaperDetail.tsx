@@ -43,16 +43,18 @@ const PaperDetail = () => {
   if (!paper) return (
     <div style={{background:"#f4e2cf"}} className="min-h-screen">
       <Navigation />
-      <div className="pt-32 max-w-2xl mx-auto text-center text-2xl text-[#ad7283]">Forskningpapir ikke fundet.</div>
+      <div className="pt-32 max-w-2xl mx-auto text-center text-2xl" style={{ color: "#ad7283" }}>
+        Research paper not found.
+      </div>
     </div>
   );
 
   const copyCitation = async () => {
     try {
       await navigator.clipboard.writeText(paper.citation);
-      toast.success("Citation kopieret til udklipsholder!");
+      toast.success("Citation copied to clipboard!");
     } catch {
-      toast.error("Kunne ikke kopiere citation");
+      toast.error("Could not copy citation.");
     }
   };
 
@@ -60,17 +62,17 @@ const PaperDetail = () => {
     <div className="min-h-screen" style={{background: "#f4e2cf"}}>
       <Navigation />
       <div className="max-w-4xl mx-auto pt-24 pb-16 px-6">
-        <button className="mb-8 text-[#581f27] underline" onClick={() => navigate('/papers')}>
-          ← Tilbage til oversigt
+        <button className="mb-8 underline" style={{ color: "#581f27" }} onClick={() => navigate('/papers')}>
+          ← Back to list
         </button>
         <div className="bg-white rounded-lg shadow-md p-8 border" style={{borderColor: "#581f27"}}>
           <div className="mb-3 flex flex-wrap items-center gap-3">
             <span className="font-semibold text-lg" style={{color:"#581f27"}}>{paper.year}</span>
-            <span className="font-medium text-[#ad7283]">•</span>
-            <span className="italic text-[#ad7283]">{paper.venue}</span>
+            <span className="font-medium" style={{ color: "#ad7283" }}>•</span>
+            <span className="italic" style={{ color: "#ad7283" }}>{paper.venue}</span>
           </div>
           <h1 className="text-3xl font-display font-bold mb-4" style={{color:"#581f27"}}>{paper.title}</h1>
-          <p className="mb-4 text-[#7d626a]">{paper.description}</p>
+          <p className="mb-4" style={{ color: "#7d626a" }}>{paper.description}</p>
           <div className="mb-6">
             <a
               href={paper.pdf}
@@ -84,26 +86,27 @@ const PaperDetail = () => {
             </a>
             <a
               href={paper.pdf}
-              className="inline-block text-[#581f27] px-6 py-2 rounded-md font-medium border"
-              style={{borderColor:"#581f27"}}
+              className="inline-block px-6 py-2 rounded-md font-medium border"
+              style={{borderColor:"#581f27", color:"#581f27"}}
               target="_blank"
               rel="noopener noreferrer"
             >
-              Se PDF
+              View PDF
             </a>
           </div>
-          <div className="mb-6 bg-[#f4e2cf] border rounded p-4" style={{borderColor:"#581f27"}}>
-            <div className="font-semibold text-[#581f27] mb-2">APA Citation:</div>
-            <div className="text-[#7d626a] text-sm mb-3">{paper.citation}</div>
+          <div className="mb-6" style={{ background: "#f4e2cf", border: "1px solid #581f27", borderRadius: "6px", padding: "1rem" }}>
+            <div className="font-semibold mb-2" style={{ color: "#581f27" }}>APA Citation:</div>
+            <div className="text-sm mb-3" style={{ color: "#7d626a" }}>{paper.citation}</div>
             <button
               onClick={copyCitation}
-              className="inline-block bg-[#581f27] text-white px-4 py-2 rounded hover:brightness-125 transition"
+              className="inline-block px-4 py-2 rounded"
+              style={{ background: "#581f27", color: "#fff" }}
             >
-              Kopier reference
+              Copy reference
             </button>
           </div>
           {paper.doi && (
-            <a href={`https://doi.org/${paper.doi}`} target="_blank" rel="noopener noreferrer" className="text-sm text-[#581f27] underline">
+            <a href={`https://doi.org/${paper.doi}`} target="_blank" rel="noopener noreferrer" className="text-sm underline" style={{ color: "#581f27" }}>
               DOI: {paper.doi}
             </a>
           )}

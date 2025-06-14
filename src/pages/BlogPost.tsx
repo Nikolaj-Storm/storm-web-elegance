@@ -4,43 +4,41 @@ import Navigation from "../components/Navigation";
 
 const BlogPost = () => {
   const { slug } = useParams();
-
-  // This would typically come from a data source
+  // Example only, normally fetched based on `slug`
   const post = {
-    title: "Kunstig intelligens og etiske overvejelser",
-    date: "15. november 2024",
+    title: "Artificial Intelligence and Ethical Reflections",
+    date: "November 15, 2024",
     content: `
-      <p>Kunstig intelligens er ikke længere science fiction - det er en realitet, der former vores hverdag på måder, vi måske ikke engang er bevidste om. Fra de anbefalinger, vi modtager på sociale medier, til de diagnostiske værktøjer, der bruges i sundhedsvæsenet, spiller AI en stadig større rolle i samfundet.</p>
+      <p>Artificial intelligence is no longer science fiction – it is a reality that shapes our everyday life in ways we may not even be aware of. From recommendations on social media to diagnostic tools in healthcare, AI plays an ever-growing role in society.</p>
       
-      <h2>De etiske udfordringer</h2>
-      <p>Men med stor magt følger stort ansvar. Når algoritmer træffer beslutninger, der påvirker menneskers liv, bliver etiske overvejelser afgørende. Hvordan sikrer vi, at AI-systemer er retfærdige? Hvordan håndterer vi bias i data? Og hvem er ansvarlig, når noget går galt?</p>
+      <h2>Ethical Challenges</h2>
+      <p>But with great power comes great responsibility. When algorithms make decisions that affect people's lives, ethical considerations become crucial. How do we ensure AI systems are fair? How do we deal with data bias? Who is responsible when something goes wrong?</p>
       
-      <h2>Vejen frem</h2>
-      <p>Svaret ligger ikke i at stoppe udviklingen, men i at guide den. Vi har brug for robuste etiske rammer, tværfagligt samarbejde og en kontinuerlig dialog mellem teknologer, politikere, filosoffer og samfundet som helhed.</p>
+      <h2>The Way Forward</h2>
+      <p>The answer is not to stop development, but to guide it. We need robust ethical frameworks, interdisciplinary collaboration, and ongoing dialogue between technologists, policymakers, philosophers, and society as a whole.</p>
       
-      <p>Kun ved at tage disse udfordringer alvorligt kan vi sikre, at kunstig intelligens bliver en kraft for det gode i verden.</p>
+      <p>Only by taking these challenges seriously can we ensure that artificial intelligence becomes a force for good in the world.</p>
     `
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen" style={{ background: "#f4e2cf" }}>
       <Navigation />
-      
       <main className="pt-24 pb-12">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto">
-            <article className="bg-card p-8 md:p-12 rounded-lg shadow-sm border border-border">
+            <article className="bg-white p-8 md:p-12 rounded-lg shadow-sm border border-[#581f27]">
               <header className="mb-8 text-center">
-                <h1 className="text-3xl md:text-4xl font-display font-bold text-primary mb-4 leading-tight">
+                <h1 className="text-3xl md:text-4xl font-display font-bold mb-4 leading-tight" style={{ color: "#581f27" }}>
                   {post.title}
                 </h1>
-                <time className="text-muted-foreground text-lg">
+                <time style={{ color: "#7d626a" }} className="text-lg">
                   {post.date}
                 </time>
               </header>
-              
               <div 
-                className="prose prose-lg max-w-none text-muted-foreground"
+                className="prose prose-lg max-w-none"
+                style={{ color: "#7d626a" }}
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
             </article>
